@@ -13,6 +13,9 @@ export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
             <span>
                 {task.text}
             </span>
+            <span>
+                {(task.createdAt).toLocaleString()}
+            </span>
             <button onClick={() => onDeleteClick(task)}>&times;</button>
         </li>
     )
