@@ -37,17 +37,15 @@ Meteor.startup(() => {
       'nth Task'
     ].forEach(taskText => insertTask(taskText, user));
   }
-},
+});
 
-  ServiceConfiguration.configurations.upsert(
-    { service: 'github' },
-    {
-      $set: {
-        loginStyle: 'popup',
-        clientId: process.env.GITHUB_CLIENT_ID,
-        secret: process.env.GITHUB_SECRET_KEY,
-      },
-    }
-  )
-
+ServiceConfiguration.configurations.upsert(
+  { service: 'github' },
+  {
+    $set: {
+      loginStyle: 'popup',
+      clientId: process.env.GITHUB_CLIENT_ID,
+      secret: process.env.GITHUB_SECRET_KEY,
+    },
+  }
 );
